@@ -38,3 +38,18 @@ let navLinks = document.querySelectorAll(".menu li a");
 navLinks.forEach((link) => {
   link.addEventListener("click", hideNavMenu);
 });
+
+// progressbar
+document.addEventListener("DOMContentLoaded", function () {
+  let progressBars = document.querySelectorAll(".progress");
+
+  progressBars.forEach((bar) => {
+    let width = bar.style.width;
+    bar.style.width = "0%"; // Reset width to 0 initially
+
+    setTimeout(() => {
+      bar.style.width = width; // Animate to original width
+    }, 500);
+  });
+});
+
