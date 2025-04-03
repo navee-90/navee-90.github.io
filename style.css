@@ -810,6 +810,12 @@ footer .text span a:hover {
 }
 
 /* Individual Skill Box */
+.skills-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
 .box-progress {
   width: 48%;
   /* Adjusted width for better layout */
