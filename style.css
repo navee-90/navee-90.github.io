@@ -163,24 +163,40 @@ nav.sticky .menu-btn {
   margin: 5px 0;
   font-weight: bold;
   display: inline-block;
-  background-image: linear-gradient(90deg, 
-    red, orange, yellow, green, blue, indigo, violet);
+  background-image: linear-gradient(90deg,
+      red, orange, yellow, green, blue, indigo, violet);
   background-size: 300% 100%;
   background-clip: text;
   color: transparent;
   animation: colorFlow 3s linear infinite, slideIn 1.5s ease-in-out;
 }
+
 /* Color gradient animation */
 @keyframes colorFlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Left-to-right sliding animation */
 @keyframes slideIn {
-  0% { transform: translateX(-100%); opacity: 0; }
-  100% { transform: translateX(0); opacity: 1; }
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .home .text-four {
@@ -575,21 +591,22 @@ footer .text span a:hover {
     overflow: hidden;
     white-space: nowrap;
   }
-  
+
   .name {
     display: inline-block;
-    border-right: 3px solid #222; /* Cursor effect */
+    border-right: 3px solid #222;
+    /* Cursor effect */
     padding-right: 5px;
     animation: blink 0.8s infinite;
   }
-  
+
   /* Cursor blinking effect */
   @keyframes blink {
     50% {
       border-color: transparent;
     }
   }
-  
+
 
   .home .text-three {
     font-size: 35px;
@@ -617,14 +634,14 @@ footer .text span a:hover {
     width: 100%;
   } */
 
-   /* services boxes */
-   .services .boxes {
+  /* services boxes */
+  .services .boxes {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
   }
-  
+
   .services .box {
     background: linear-gradient(135deg, #1e3c72, #2a5298);
     color: #fff;
@@ -639,7 +656,7 @@ footer .text span a:hover {
     cursor: pointer;
     overflow: hidden;
   }
-  
+
   /* Adding depth effect */
   .services .box::before {
     content: "";
@@ -652,18 +669,18 @@ footer .text span a:hover {
     border-radius: 15px;
     z-index: 0;
   }
-  
+
   .services .box:hover {
     transform: rotateY(15deg) scale(1.1);
     box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.4);
   }
-  
+
   /* Neon border effect */
   .services .box:hover::before {
     border: 2px solid rgba(255, 255, 255, 0.5);
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
   }
-  
+
   /* Icon style */
   .services .box .icon {
     font-size: 45px;
@@ -671,12 +688,12 @@ footer .text span a:hover {
     color: #ffcc00;
     transition: transform 0.4s ease-in-out;
   }
-  
+
   .services .box:hover .icon {
     transform: scale(1.2);
     color: #ff9900;
   }
-  
+
   /* Title style */
   .services .box .topic {
     font-size: 20px;
@@ -684,14 +701,14 @@ footer .text span a:hover {
     margin-bottom: 10px;
     color: #ffdd57;
   }
-  
+
   /* Description */
   .services .box p {
     font-size: 14px;
     margin-top: 10px;
     color: #e3e3e3;
   }
-  
+
 
   .contact .text {
     width: 100%;
@@ -794,7 +811,8 @@ footer .text span a:hover {
 
 /* Individual Skill Box */
 .box-progress {
-  width: 48%; /* Adjusted width for better layout */
+  width: 48%;
+  /* Adjusted width for better layout */
   background: #fff;
   padding: 15px;
   border-radius: 10px;
@@ -806,15 +824,33 @@ footer .text span a:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
+
 /* animation of topic */
 /* Color-changing animation */
 @keyframes colorChange {
-  0% { color: red; }
-  20% { color: orange; }
-  40% { color: yellow; }
-  60% { color: green; }
-  80% { color: blue; }
-  100% { color: purple; }
+  0% {
+    color: red;
+  }
+
+  20% {
+    color: orange;
+  }
+
+  40% {
+    color: yellow;
+  }
+
+  60% {
+    color: green;
+  }
+
+  80% {
+    color: blue;
+  }
+
+  100% {
+    color: purple;
+  }
 }
 
 /* Apply animation to the topic and percentage */
@@ -874,10 +910,11 @@ footer .text span a:hover {
 /* Responsive Design */
 @media (max-width: 768px) {
   .box-progress {
-    width: 100%; /* Full width for smaller screens */
+    width: 100%;
+    /* Full width for smaller screens */
   }
 }
 
-.contact-info{
+.contact-info {
   text-align: center;
 }

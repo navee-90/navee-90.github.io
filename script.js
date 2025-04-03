@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 500);
   });
 });
-// Name
+// Name Animation
 document.addEventListener("DOMContentLoaded", function () {
   let text = "Naveen Rasipogula"; // Your name
   let index = 0;
