@@ -801,13 +801,13 @@ footer .text span a:hover {
 
 
 /* Progress bar */
-/* .boxes {
+.boxes {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 20px;
   padding: 20px;
-} */
+}
 
 /* Individual Skill Box */
 .skills-boxes {
