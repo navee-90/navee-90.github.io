@@ -52,4 +52,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 500);
   });
 });
+// Name
+document.addEventListener("DOMContentLoaded", function () {
+  let text = "Naveen Rasipogula"; // Your name
+  let index = 0;
+  let speed = 150; // Typing speed (milliseconds)
+
+  function typeEffect() {
+    if (index < text.length) {
+      document.querySelector(".name").textContent += text.charAt(index);
+      index++;
+      setTimeout(typeEffect, speed);
+    } else {
+      document.querySelector(".name").style.borderRight = "none"; // Remove cursor after typing
+    }
+  }
+
+  typeEffect(); // Start typing effect
+});
 
