@@ -395,7 +395,7 @@ section .button button:hover {
 }
 
 /* My Services CSS */
-.services .boxes {
+/* .services .boxes {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -444,7 +444,78 @@ section .button button:hover {
 .services .boxes .box:hover .topic,
 .services .boxes .box:hover p {
   color: #fff;
+} */
+
+.services .boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
 }
+
+.services .boxes .box {
+  flex: 1 1 calc(33.333% - 20px);
+  text-align: center;
+  border-radius: 12px;
+  padding: 30px 15px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+  cursor: default;
+  transition: all 0.4s ease;
+  background: #fff;
+}
+
+.services .boxes .box:hover {
+  background: #4070f4;
+  color: #fff;
+}
+
+.services .boxes .box .icon {
+  height: 50px;
+  width: 50px;
+  background: #4070f4;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+  font-size: 18px;
+  color: #fff;
+  margin: 0 auto 10px auto;
+  transition: all 0.4s ease;
+}
+
+.boxes .box:hover .icon {
+  background-color: #fff;
+  color: #4070f4;
+}
+
+.services .boxes .box:hover .topic,
+.services .boxes .box:hover p {
+  color: #fff;
+  transition: all 0.4s ease;
+}
+
+/* ========== Responsive Breakpoints ========== */
+
+/* Tablet View (768px - 1024px) */
+@media (max-width: 1024px) {
+  .services .boxes .box {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+/* Mobile View (up to 767px) */
+@media (max-width: 767px) {
+  .services .boxes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .services .boxes .box {
+    width: 90%;
+    flex: none;
+  }
+}
+
 
 /* Contact Me CSS */
 .contact {
@@ -801,125 +872,97 @@ footer .text span a:hover {
 
 
 /* Progress bar */
+/* Main Layout Container */
 .boxes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
   padding: 20px;
 }
 
-/* Individual Skill Box */
+/* Flex layout for skill boxes */
 .skills-boxes {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 20px;
 }
+
+/* Individual Skill Box */
 .box-progress {
-  width: 48%;
-  /* Adjusted width for better layout */
+  width: calc(50% - 10px);
   background: #fff;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .box-progress:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
-/* animation of topic */
-/* Color-changing animation */
+/* Color Animation */
 @keyframes colorChange {
-  0% {
-    color: red;
-  }
-
-  20% {
-    color: orange;
-  }
-
-  40% {
-    color: yellow;
-  }
-
-  60% {
-    color: green;
-  }
-
-  80% {
-    color: blue;
-  }
-
-  100% {
-    color: purple;
-  }
+  0% { color: red; }
+  25% { color: orange; }
+  50% { color: yellowgreen; }
+  75% { color: skyblue; }
+  100% { color: purple; }
 }
 
-/* Apply animation to the topic and percentage */
+/* Skill Title & Percentage */
 .topics {
-  font-size: 1.5rem;
-  font-weight: bold;
-  animation: colorChange 3s infinite alternate;
-}
-
-/* Apply animation to the percentage separately */
-.topics span {
-  font-weight: bold;
-  animation: colorChange 3s infinite alternate-reverse;
-}
-
-/* Skill Name & Percentage */
-.topics {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  color: rgb(104, 135, 220);
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  animation: colorChange 4s infinite alternate;
 }
 
-/* Percentage Text */
-.percentage {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #fff;
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
+.topics span {
+  animation: colorChange 4s infinite alternate-reverse;
 }
 
 /* Progress Bar Container */
 .progress-bar {
   width: 100%;
   height: 10px;
-  background: #ddd;
+  background: #eee;
   border-radius: 5px;
-  position: relative;
   overflow: hidden;
 }
 
-/* Progress Fill with Animation */
+/* Animated Progress Fill */
 .progress {
   height: 100%;
   background: linear-gradient(to right, #4CAF50, #2E7D32);
-  border-radius: 5px;
   transition: width 1.5s ease-in-out;
-  position: relative;
+  border-radius: 5px;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* Responsive: Tablet */
+@media (max-width: 992px) {
   .box-progress {
     width: 100%;
-    /* Full width for smaller screens */
   }
 }
+
+/* Responsive: Mobile */
+@media (max-width: 600px) {
+  .skills-boxes {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .box-progress {
+    width: 100%;
+  }
+
+  .topics {
+    font-size: 1rem;
+  }
+}
+
 
 .contact-info {
   text-align: center;
