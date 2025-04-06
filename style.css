@@ -446,52 +446,75 @@ section .button button:hover {
   color: #fff;
 } */
 
+/* Base Styling */
+.services {
+  padding: 40px 20px;
+  background-color: #f5f8ff;
+}
+
 .services .boxes {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   gap: 20px;
-  padding: 20px;
 }
 
 .services .boxes .box {
   flex: 1 1 calc(33.333% - 20px);
+  max-width: 360px;
+  min-width: 280px;
+  background: #ffffff;
   text-align: center;
-  border-radius: 12px;
-  padding: 30px 15px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
-  cursor: default;
+  border-radius: 16px;
+  padding: 30px 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
   transition: all 0.4s ease;
-  background: #fff;
+  cursor: default;
 }
 
 .services .boxes .box:hover {
   background: #4070f4;
   color: #fff;
+  transform: translateY(-5px);
 }
 
 .services .boxes .box .icon {
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
   background: #4070f4;
   border-radius: 50%;
   text-align: center;
-  line-height: 50px;
-  font-size: 18px;
+  line-height: 60px;
+  font-size: 24px;
   color: #fff;
-  margin: 0 auto 10px auto;
+  margin: 0 auto 15px auto;
   transition: all 0.4s ease;
 }
 
-.boxes .box:hover .icon {
+.services .boxes .box:hover .icon {
   background-color: #fff;
   color: #4070f4;
 }
 
+.services .boxes .box .topic {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+  transition: color 0.4s ease;
+}
+
+.services .boxes .box p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+  transition: color 0.4s ease;
+}
+
+/* Hover Text Color */
 .services .boxes .box:hover .topic,
 .services .boxes .box:hover p {
   color: #fff;
-  transition: all 0.4s ease;
 }
 
 /* ========== Responsive Breakpoints ========== */
@@ -511,10 +534,11 @@ section .button button:hover {
   }
 
   .services .boxes .box {
+    flex: 1 1 100%;
     width: 90%;
-    flex: none;
   }
 }
+
 
 
 /* Contact Me CSS */
@@ -902,11 +926,25 @@ footer .text span a:hover {
 
 /* Color Animation */
 @keyframes colorChange {
-  0% { color: red; }
-  25% { color: orange; }
-  50% { color: yellowgreen; }
-  75% { color: skyblue; }
-  100% { color: purple; }
+  0% {
+    color: red;
+  }
+
+  25% {
+    color: orange;
+  }
+
+  50% {
+    color: yellowgreen;
+  }
+
+  75% {
+    color: skyblue;
+  }
+
+  100% {
+    color: purple;
+  }
 }
 
 /* Skill Title & Percentage */
