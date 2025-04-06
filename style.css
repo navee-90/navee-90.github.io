@@ -28,7 +28,23 @@
   background: #4070f4;
 }
 
+/* scroll section */
+.scroll-button a {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: #fff;
+  background: #4070f4;
+  padding: 7px 12px;
+  ;
+  font-size: 18px;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.15);
+  display: none;
+}
+
 /* navbar styling */
+/* Base Navbar Styles */
 nav {
   position: fixed;
   width: 100%;
@@ -36,6 +52,7 @@ nav {
   z-index: 998;
   transition: all 0.3s ease;
   font-family: 'Ubuntu', sans-serif;
+  background: transparent;
 }
 
 nav.sticky {
@@ -45,6 +62,7 @@ nav.sticky {
 
 nav .navbar {
   width: 90%;
+  max-width: 1200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -55,12 +73,14 @@ nav .navbar .logo a {
   font-weight: 500;
   font-size: 35px;
   color: #4070f4;
+  text-decoration: none;
 }
 
 nav.sticky .navbar .logo a {
   color: #fff;
 }
 
+/* Menu */
 nav .navbar .menu {
   display: flex;
   position: relative;
@@ -68,7 +88,7 @@ nav .navbar .menu {
 
 nav .navbar .menu li {
   list-style: none;
-  margin: 0 8px;
+  margin: 0 12px;
 }
 
 .navbar .menu a {
@@ -77,6 +97,7 @@ nav .navbar .menu li {
   color: #0E2431;
   padding: 6px 0;
   transition: all 0.4s ease;
+  text-decoration: none;
 }
 
 .navbar .menu a:hover {
@@ -91,27 +112,30 @@ nav.sticky .menu a:hover {
   color: #0E2431;
 }
 
+/* Social Icons */
 .navbar .media-icons a {
   color: #4070f4;
   font-size: 18px;
   margin: 0 6px;
+  text-decoration: none;
 }
 
 nav.sticky .media-icons a {
   color: #FFF;
 }
 
-/* Side Navigation Menu Button CSS */
+/* Menu Toggle Buttons */
 nav .menu-btn,
 .navbar .menu .cancel-btn {
   position: absolute;
   color: #fff;
   right: 30px;
   top: 20px;
-  font-size: 20px;
+  font-size: 24px;
   cursor: pointer;
-  transition: all 0.3s ease;
   display: none;
+  z-index: 999;
+  transition: all 0.3s ease;
 }
 
 nav .menu-btn {
@@ -122,9 +146,53 @@ nav.sticky .menu-btn {
   color: #FFF;
 }
 
-.navbar .menu .menu-btn {
-  color: #fff;
+.navbar .menu .cancel-btn {
+  color: #FFF;
+  right: 30px;
+  top: 20px;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  nav .menu-btn {
+    display: block;
+  }
+
+  nav .navbar .menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background: #4070f4;
+    height: 100vh;
+    width: 300px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.4s ease;
+  }
+
+  nav .navbar .menu.active {
+    right: 0;
+  }
+
+  nav .navbar .menu li {
+    margin: 20px 0;
+  }
+
+  nav .navbar .menu a {
+    font-size: 22px;
+    color: #FFF;
+  }
+
+  .navbar .media-icons {
+    display: none;
+  }
+
+  .navbar .menu .cancel-btn {
+    display: block;
+  }
+}
+
 
 /* home section styling */
 .home {
@@ -149,6 +217,7 @@ nav.sticky .menu-btn {
 .home .text-one {
   font-size: 25px;
   color: #0E2431;
+  margin-left: 25%;
 }
 
 .home .text-two {
@@ -156,23 +225,25 @@ nav.sticky .menu-btn {
   font-size: 75px;
   font-weight: 600;
   margin-left: -3px;
+  margin-left: 25%;
 }
 
-.home .text-three {
+.text-three {
+  margin-left: 25%;
   font-size: 40px;
-  margin: 5px 0;
   font-weight: bold;
   display: inline-block;
-  background-image: linear-gradient(90deg,
-      red, orange, yellow, green, blue, indigo, violet);
-  background-size: 300% 100%;
-  background-clip: text;
-  color: transparent;
-  animation: colorFlow 3s linear infinite, slideIn 1.5s ease-in-out;
+  background-image: linear-gradient(270deg,
+      #ff6b6b, red, #54a0ff, #5f27cd, #ff6b6b);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorMix 5s ease infinite, slideIn 1.5s ease-in-out;
+  white-space: nowrap;
 }
 
-/* Color gradient animation */
-@keyframes colorFlow {
+/* Shimmering color animation */
+@keyframes colorMix {
   0% {
     background-position: 0% 50%;
   }
@@ -186,7 +257,7 @@ nav.sticky .menu-btn {
   }
 }
 
-/* Left-to-right sliding animation */
+/* Initial slide-in effect */
 @keyframes slideIn {
   0% {
     transform: translateX(-100%);
@@ -199,14 +270,18 @@ nav.sticky .menu-btn {
   }
 }
 
+
+
 .home .text-four {
   font-size: 23px;
   margin: 5px 0;
   color: #0E2431;
+  margin-left: 25%;
 }
 
 .home .button {
   margin: 14px 0;
+  margin-left: 25%;
 }
 
 .home .button button {
@@ -982,6 +1057,170 @@ footer .text span a:hover {
 }
 
 
+/* contact */
+/* Font & Reset */
+body {
+  font-family: 'Ubuntu', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f7f9fc;
+}
+
+/* Page Layout */
+.contact-page {
+  padding: 60px 20px;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Left Side: Contact Info */
+.contact-info {
+  flex: 1;
+  min-width: 260px;
+}
+
+.contact-info h2 {
+  font-size: 28px;
+  color: #0e2431;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.social-icons a {
+  margin-right: 15px;
+  font-size: 25px;
+  color: #4070f4;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #0e2431;
+}
+
+/* Right Side: Form */
+.contact-form-box {
+  flex: 2;
+  min-width: 300px;
+}
+
+.form-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #0e2431;
+  position: relative;
+}
+
+.form-title::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 4px;
+  background: #4070f4;
+  margin-top: 8px;
+  border-radius: 2px;
+}
+
+/* Form Styling */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px 18px;
+  margin: 12px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #4070f4;
+  box-shadow: 0 0 6px rgba(64, 112, 244, 0.3);
+}
+
+.form-button {
+  margin-top: 10px;
+  text-align: right;
+}
+
+.form-button button {
+  background-color: #4070f4;
+  color: #fff;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.form-button button:hover {
+  background-color: #3058d0;
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+
+  .form-button {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .contact-form-box,
+  .contact-info {
+    width: 100%;
+  }
+
+  .form-button button {
+    width: 100%;
+  }
+}
+
+/* contact me */
+.contact {
+  background: #F0F8FF;
+}
+
+.contact .content {
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.contact .text {
+  width: 80%;
+  text-align: center;
+  margin: auto;
+}
+
 .contact-info {
   text-align: center;
+}
+
+.text .topic {
+  color: orangered;
 }

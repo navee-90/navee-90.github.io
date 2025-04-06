@@ -4,7 +4,11 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Portfolio Website| Naveen Rasipogula</title>
+  <title>Naveen Rasipogula</title>
+  <link rel="icon"
+    href="https://png.pngtree.com/png-clipart/20221012/original/pngtree-letter-n-logo-icon-vector-png-image_8679078.png"
+    type="image/x-icon">
+
   <link rel="stylesheet" href="style.css" />
   <!-- Fontawesome CDN Link -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -13,13 +17,15 @@
 
 <body>
   <!-- Move to up button -->
+  <!-- Scroll to Top Button -->
   <div class="scroll-button">
     <a href="#home"><i class="fas fa-arrow-up"></i></a>
   </div>
+
   <!-- navgaition menu -->
   <nav>
     <div class="navbar">
-      <div class="logo"><a href="#">Portfolio</a></div>
+      <div class="logo"><a href="#">Naveen</a></div>
       <ul class="menu">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -47,7 +53,7 @@
       <div class="text">
         <div class="text-one">Hello,</div>
         <div class="text-two">I'm <span class="name"></span></div>
-        <div class="text-three">Full Stack Developer</div>
+        <div class="text-three" id="role-text">Full Stack Developer</div>
         <div class="text-four">From Hyderabad</div>
       </div>
       <div class="button">
@@ -312,13 +318,45 @@
     </div>
   </section>
   <!-- Contact Me section Start -->
+  <section class="contact-page">
+    <div class="contact-container">
+
+      <!-- Left Side: Contact Info -->
+      <div class="contact-info">
+        <h2>Contact Me</h2>
+        <p><strong>Email:</strong> naveenrs.jn@gmail.com</p>
+        <p><strong>Phone:</strong> +91 7569951790</p>
+        <p><strong>Location:</strong> Hyderabad, India</p>
+
+        <div class="social-icons">
+          <a href="https://github.com/navee-90?tab=repositories"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/naveen-rasipogula-37a647251/"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+
+      <!-- Right Side: Send Message Form -->
+      <div class="contact-form-box">
+        <h2 class="form-title">Send Message</h2>
+        <form class="contact-form">
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Your Email" required>
+          <input type="text" placeholder="Subject" required>
+          <textarea rows="6" placeholder="Message" required></textarea>
+          <div class="form-button">
+            <button type="submit">Send Message</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
   <section class="contact" id="contact">
     <div class="content">
       <div class="title"><span>Contact Me</span></div>
       <h2 class="contact-info">naveenrs.jn@gmail.com | +91 7569951790</h2>
       &nbsp;
       <div class="text">
-        <div class="topic">Have Any Project?</div>
+        <div class="topic">Have Any Job or Project?</div>
         <p>You can Contact Me</p>
         <div class="button">
           <button>Let's Chat</button>

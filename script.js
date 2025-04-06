@@ -1,4 +1,4 @@
-// Sticky Navigation Menu
+// Toggle menu/navbar script
 let nav = document.querySelector("nav");
 let scrollBtn = document.querySelector(".scroll-button a");
 // Show/hide sticky navigation and scroll button based on scroll position
@@ -39,6 +39,9 @@ navLinks.forEach((link) => {
   link.addEventListener("click", hideNavMenu);
 });
 
+// 
+
+
 // progressbar
 document.addEventListener("DOMContentLoaded", function () {
   let progressBars = document.querySelectorAll(".progress");
@@ -70,4 +73,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
   typeEffect(); // Start typing effect
 });
+
+// Job roles animation
+const roles = [
+  "Software Developer",
+  "Python Developer",
+  "Machine Learning Engineer",
+  "Data Scientist",
+  "SQL Developer",
+  "Web Developer",
+  "Full Stack Developer"
+];
+
+let roleIndex = 0;
+const roleText = document.getElementById("role-text");
+
+function changeRole() {
+  roleText.classList.remove("slide-in");
+
+  // Update text after animation reset
+  setTimeout(() => {
+    roleText.textContent = roles[roleIndex];
+    roleText.classList.add("slide-in");
+    roleIndex = (roleIndex + 1) % roles.length;
+  }, 300);
+}
+
+// Slide-in animation class (optional reset)
+roleText.classList.add("slide-in");
+setInterval(changeRole, 3000);
+
+
 
