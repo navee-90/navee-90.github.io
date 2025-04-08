@@ -254,33 +254,30 @@ nav.sticky .menu-btn {
   font-family: 'Ubuntu', sans-serif;
   display: flex;
   align-items: center;
+  padding: 0 20px;
 }
 
 .home-content {
-  width: 90%;
+  width: 100%;
   max-width: 1200px;
   margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.text-one,
-.text-two,
-.text-three,
-.text-four {
-  margin-left: 0;
+  padding: 20px 0;
 }
 
 .text-one {
   font-size: 24px;
   color: #0E2431;
+  margin-bottom: 8px;
 }
 
 .text-two {
   color: #0E2431;
   font-size: 60px;
   font-weight: 600;
+  margin-bottom: 10px;
 }
 
 .text-three {
@@ -292,6 +289,7 @@ nav.sticky .menu-btn {
   -webkit-text-fill-color: transparent;
   animation: colorMix 5s ease infinite, slideIn 1.5s ease-in-out;
   white-space: nowrap;
+  margin-bottom: 10px;
 }
 
 .text-four {
@@ -301,11 +299,11 @@ nav.sticky .menu-btn {
 }
 
 .button {
-  margin-top: 20px;
+  margin-top: 25px;
 }
 
 .button button {
-  padding: 10px 20px;
+  padding: 12px 26px;
   font-size: 20px;
   font-weight: 500;
   background: #4070f4;
@@ -322,6 +320,7 @@ nav.sticky .menu-btn {
   border: 2px solid #4070f4;
 }
 
+/* Animations */
 @keyframes colorMix {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -339,23 +338,43 @@ nav.sticky .menu-btn {
   }
 }
 
+/* Tablet: 768px to 992px */
 @media (max-width: 992px) {
+  .text-one {
+    font-size: 22px;
+  }
+
   .text-two {
-    font-size: 50px;
+    font-size: 48px;
   }
 
   .text-three {
     font-size: 30px;
   }
+
+  .text-four {
+    font-size: 20px;
+  }
+
+  .button button {
+    font-size: 18px;
+    padding: 10px 24px;
+  }
 }
 
+/* Mobile: 576px to 768px */
 @media (max-width: 768px) {
+  .text-one {
+    font-size: 20px;
+  }
+
   .text-two {
-    font-size: 40px;
+    font-size: 38px;
   }
 
   .text-three {
-    font-size: 24px;
+    font-size: 26px;
+    white-space: normal;
   }
 
   .text-four {
@@ -363,20 +382,39 @@ nav.sticky .menu-btn {
   }
 
   .button button {
-    font-size: 18px;
+    font-size: 16px;
+    padding: 10px 20px;
   }
 }
 
+/* Small Mobile: below 576px */
 @media (max-width: 576px) {
   .home-content {
     align-items: flex-start;
   }
 
-  .text-two,
   .text-one,
+  .text-two,
   .text-three,
   .text-four {
     text-align: left;
+  }
+
+  .text-two {
+    font-size: 32px;
+  }
+
+  .text-three {
+    font-size: 22px;
+  }
+
+  .text-four {
+    font-size: 16px;
+  }
+
+  .button button {
+    font-size: 15px;
+    padding: 10px 18px;
   }
 }
 
