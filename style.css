@@ -421,20 +421,15 @@ nav.sticky .menu-btn {
 /* About Section Styling */
 /* Those Elements Where We Have Apply Same CSS,
  I'm Selecting Directly 'Section Tag' and 'Class'  */
-section {
+ section {
   padding-top: 40px;
 }
 
 section .content {
-  width: 80%;
+  width: 90%;
+  max-width: 1200px;
   margin: 40px auto;
   font-family: 'Poppins', sans-serif;
-}
-
-.about .about-details {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 section .title {
@@ -469,119 +464,265 @@ section .title span::after {
   transform: translateX(-50%);
 }
 
+.about .about-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
 .about .about-details .left {
-  width: 45%;
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  justify-content: center;
 }
 
 .about .left img {
-  height: 400px;
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
   object-fit: cover;
   border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.about-details .right {
-  width: 55%;
+.about .about-details .right {
+  flex: 1;
+  min-width: 280px;
 }
 
 section .topic {
   color: #0E2431;
   font-size: 25px;
   font-weight: 500;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .about-details .right p {
   text-align: justify;
   color: #0E2431;
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 section .button {
-  margin: 16px 0;
+  margin-top: 24px;
 }
 
 section .button button {
-  outline: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-  font-size: 25px;
-  font-weight: 400;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: 500;
   background: #4070f4;
   color: #fff;
   border: 2px solid transparent;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.4s ease;
 }
 
 section .button button:hover {
-  border-color: #4070f4;
-  background-color: #fff;
+  background: #fff;
   color: #4070f4;
+  border-color: #4070f4;
 }
+
+/* Tablet Styles */
+@media (max-width: 992px) {
+  .section .title span {
+    font-size: 26px;
+  }
+
+  section .topic {
+    font-size: 22px;
+  }
+
+  .about-details .right p {
+    font-size: 17px;
+  }
+
+  section .button button {
+    font-size: 17px;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .about .about-details {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about .about-details .left,
+  .about .about-details .right {
+    width: 100%;
+  }
+
+  .about .left img {
+    max-width: 90%;
+  }
+
+  section .topic {
+    font-size: 20px;
+  }
+
+  .about-details .right p {
+    font-size: 16px;
+  }
+
+  section .button {
+    text-align: center;
+  }
+
+  section .button button {
+    font-size: 16px;
+    padding: 10px 18px;
+  }
+}
+
 
 /* My Skills CSS */
 .skills {
   background: #F0F8FF;
+  font-family: 'Poppins', sans-serif;
 }
 
 .skills .content {
-  padding: 40px 0;
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 20px;
 }
 
 .skills .skills-details {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
 }
 
 .skills-details .text {
-  width: 50%;
+  flex: 1;
+  min-width: 280px;
 }
 
 .skills-details p {
   color: #0E2431;
   text-align: justify;
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 .skills .skills-details .experience {
   display: flex;
   align-items: center;
-  margin: 0 10px;
+  margin-top: 20px;
 }
 
 .skills-details .experience .num {
   color: #0E2431;
-  font-size: 80px;
+  font-size: 70px;
+  font-weight: bold;
 }
 
 .skills-details .experience .exp {
   color: #0E2431;
-  margin-left: 20px;
-  font-size: 18px;
+  margin-left: 16px;
+  font-size: 20px;
   font-weight: 500;
-  margin: 0 6px;
 }
 
 .skills-details .boxes {
-  width: 45%;
+  flex: 1;
+  min-width: 280px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 20px;
 }
 
 .skills-details .box {
-  width: calc(100% / 2 - 20px);
-  margin: 20px 0;
+  width: calc(50% - 10px);
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.skills-details .box:hover {
+  transform: translateY(-5px);
 }
 
 .skills-details .boxes .topic {
   font-size: 20px;
   color: #4070f4;
+  margin-bottom: 8px;
+  font-weight: 500;
 }
 
 .skills-details .boxes .per {
-  font-size: 60px;
+  font-size: 48px;
   color: #4070f4;
+  font-weight: 600;
+}
+
+/* Tablet View */
+@media (max-width: 992px) {
+  .skills-details .experience .num {
+    font-size: 60px;
+  }
+
+  .skills-details .experience .exp {
+    font-size: 18px;
+  }
+
+  .skills-details p {
+    font-size: 17px;
+  }
+
+  .skills-details .boxes .per {
+    font-size: 42px;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .skills .skills-details {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .skills-details .text,
+  .skills-details .boxes {
+    width: 100%;
+  }
+
+  .skills-details .box {
+    width: 100%;
+  }
+
+  .skills-details .experience {
+    justify-content: center;
+  }
+
+  .skills-details .experience .num {
+    font-size: 50px;
+  }
+
+  .skills-details .experience .exp {
+    font-size: 16px;
+  }
+
+  .skills-details p {
+    font-size: 16px;
+  }
+
+  .skills-details .boxes .per {
+    font-size: 36px;
+  }
 }
 
 /* My Services CSS */
@@ -589,26 +730,29 @@ section .button button:hover {
 
 /* Base Styling */
 .services {
-  padding: 40px 20px;
+  padding: 60px 20px;
   background-color: #f5f8ff;
+  font-family: 'Poppins', sans-serif;
 }
 
 .services .boxes {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .services .boxes .box {
-  flex: 1 1 calc(33.333% - 20px);
+  flex: 1 1 calc(33.333% - 30px);
   max-width: 360px;
   min-width: 280px;
   background: #ffffff;
   text-align: center;
   border-radius: 16px;
-  padding: 30px 20px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  padding: 40px 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
   transition: all 0.4s ease;
   cursor: default;
 }
@@ -616,19 +760,20 @@ section .button button:hover {
 .services .boxes .box:hover {
   background: #4070f4;
   color: #fff;
-  transform: translateY(-5px);
+  transform: translateY(-8px);
 }
 
 .services .boxes .box .icon {
-  height: 60px;
-  width: 60px;
+  height: 70px;
+  width: 70px;
   background: #4070f4;
   border-radius: 50%;
-  text-align: center;
-  line-height: 60px;
-  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
   color: #fff;
-  margin: 0 auto 15px auto;
+  margin: 0 auto 20px auto;
   transition: all 0.4s ease;
 }
 
@@ -638,15 +783,15 @@ section .button button:hover {
 }
 
 .services .boxes .box .topic {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 600;
-  margin-bottom: 10px;
-  color: #333;
+  margin-bottom: 12px;
+  color: #0E2431;
   transition: color 0.4s ease;
 }
 
 .services .boxes .box p {
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.6;
   color: #555;
   transition: color 0.4s ease;
@@ -658,16 +803,14 @@ section .button button:hover {
   color: #fff;
 }
 
-/* ========== Responsive Breakpoints ========== */
-
-/* Tablet View (768px - 1024px) */
+/* Tablet View */
 @media (max-width: 1024px) {
   .services .boxes .box {
     flex: 1 1 calc(50% - 20px);
   }
 }
 
-/* Mobile View (up to 767px) */
+/* Mobile View */
 @media (max-width: 767px) {
   .services .boxes {
     flex-direction: column;
@@ -675,8 +818,22 @@ section .button button:hover {
   }
 
   .services .boxes .box {
-    flex: 1 1 100%;
-    width: 90%;
+    width: 100%;
+    max-width: 90%;
+  }
+
+  .services .boxes .box .topic {
+    font-size: 1.2rem;
+  }
+
+  .services .boxes .box p {
+    font-size: 0.95rem;
+  }
+
+  .services .boxes .box .icon {
+    height: 60px;
+    width: 60px;
+    font-size: 22px;
   }
 }
 
@@ -685,93 +842,205 @@ section .button button:hover {
 /* Contact Me CSS */
 .contact {
   background: #F0F8FF;
+  padding: 60px 20px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .contact .content {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 30px 0;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .contact .text {
-  width: 80%;
-  text-align: center;
-  margin: auto;
+  width: 100%;
+  max-width: 700px;
+  margin-bottom: 30px;
+}
+
+.contact .text h2 {
+  font-size: 2rem;
+  color: #0E2431;
+  margin-bottom: 15px;
+}
+
+.contact .text p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Contact Form (Optional, if needed) */
+.contact form {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact form input,
+.contact form textarea {
+  padding: 12px 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  resize: none;
+  font-family: inherit;
+}
+
+.contact form button {
+  padding: 12px 20px;
+  background: #4070f4;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact form button:hover {
+  background: #fff;
+  color: #4070f4;
+  border: 2px solid #4070f4;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .contact .text h2 {
+    font-size: 1.6rem;
+  }
+
+  .contact .text p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact {
+    padding: 40px 15px;
+  }
+
+  .contact .text h2 {
+    font-size: 1.4rem;
+  }
+
+  .contact .text p {
+    font-size: 0.9rem;
+  }
 }
 
 /* Footer CSS */
 footer {
   background: #4070f4;
-  padding: 15px 0;
+  padding: 20px 10px;
   text-align: center;
   font-family: 'Poppins', sans-serif;
 }
 
+footer .text {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 15px;
+}
+
 footer .text span {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 400;
   color: #fff;
+  line-height: 1.5;
 }
 
 footer .text span a {
   font-weight: 500;
-  color: #FFF;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 footer .text span a:hover {
   text-decoration: underline;
+  color: #e2e2e2;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  footer .text span {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  footer .text span {
+    font-size: 14px;
+    display: block;
+    margin: 5px 0;
+  }
 }
 
 /* Scroll TO Top Button CSS */
+/* Scroll to Top Button */
 .scroll-button a {
   position: fixed;
   bottom: 20px;
   right: 20px;
   color: #fff;
   background: #4070f4;
-  padding: 7px 12px;
+  padding: 10px 15px;
   font-size: 18px;
-  border-radius: 6px;
-  box-shadow: rgba(0, 0, 0, 0.15);
+  border-radius: 50px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
   display: none;
+  z-index: 999;
+  transition: all 0.3s ease;
 }
 
-/* Responsive Media Query */
+.scroll-button a:hover {
+  background-color: #3056c7;
+}
+
+/* ========== Responsive Media Queries ========== */
+
+/* Large Tablet and Small Laptop */
 @media (max-width: 1190px) {
   section .content {
     width: 85%;
   }
 }
 
+/* Medium Tablet */
 @media (max-width: 1000px) {
   .about .about-details {
-    justify-content: center;
     flex-direction: column;
+    align-items: center;
   }
 
-  .about .about-details .left {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-
+  .about .about-details .left,
   .about-details .right {
     width: 90%;
-    margin: 40px 0;
+    margin: 20px 0;
   }
 
   .services .boxes .box {
-    margin: 20px 0;
-    width: calc(100% / 2 - 20px);
+    width: calc(50% - 20px);
+    margin: 20px 10px;
   }
 }
 
+/* Small Tablet */
 @media (max-width: 900px) {
   .about .left img {
-    height: 350px;
-    width: 350px;
+    height: 320px;
+    width: 320px;
   }
 }
 
+/* Mobile */
 @media (max-width: 750px) {
   nav .navbar {
     width: 90%;
@@ -783,23 +1052,24 @@ footer .text span a:hover {
     top: 0;
     background: #0E2431;
     height: 100vh;
-    max-width: 400px;
+    max-width: 300px;
     width: 100%;
     padding-top: 60px;
     flex-direction: column;
     align-items: center;
-    transition: all 0.5s ease;
+    transition: left 0.5s ease;
+    z-index: 998;
   }
 
-  .navbar.active .menu {
+  nav .navbar.active .menu {
     left: 0;
   }
 
   nav .navbar .menu a {
-    font-size: 23px;
+    font-size: 22px;
     display: block;
     color: #fff;
-    margin: 10px 0;
+    margin: 12px 0;
   }
 
   nav.sticky .menu a:hover {
@@ -815,54 +1085,52 @@ footer .text span a:hover {
     display: block;
   }
 
+  /* Hero Text Adjustments */
   .home .text-two {
-    font-size: 65px;
+    font-size: 40px;
   }
 
   .text-two {
     font-size: 2rem;
     font-weight: bold;
     color: #222;
-    overflow: hidden;
     white-space: nowrap;
+    overflow: hidden;
   }
 
   .name {
     display: inline-block;
     border-right: 3px solid #222;
-    /* Cursor effect */
     padding-right: 5px;
     animation: blink 0.8s infinite;
   }
 
-  /* Cursor blinking effect */
   @keyframes blink {
     50% {
       border-color: transparent;
     }
   }
 
-
   .home .text-three {
-    font-size: 35px;
+    font-size: 28px;
   }
 
+  /* Skills Section */
   .skills .skills-details {
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+    align-items: center;
+  }
+
+  .skills-details .text,
+  .skills-details .boxes {
+    width: 100%;
+    text-align: center;
   }
 
   .skills-details .text {
-    width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
-
-  .skills-details .boxes {
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
+}
 
   /* .services .boxes .box {
     margin: 20px 0;
@@ -870,20 +1138,25 @@ footer .text span a:hover {
   } */
 
   /* services boxes */
+  .services {
+    padding: 40px 20px;
+    background: #f0f8ff;
+  }
+  
   .services .boxes {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
   }
-
+  
   .services .box {
     background: linear-gradient(135deg, #1e3c72, #2a5298);
     color: #fff;
     padding: 25px;
     border-radius: 15px;
     text-align: center;
-    width: 260px;
+    width: 280px;
     position: relative;
     transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
     transform-style: preserve-3d;
@@ -891,8 +1164,8 @@ footer .text span a:hover {
     cursor: pointer;
     overflow: hidden;
   }
-
-  /* Adding depth effect */
+  
+  /* Depth and Neon Glow */
   .services .box::before {
     content: "";
     position: absolute;
@@ -904,69 +1177,94 @@ footer .text span a:hover {
     border-radius: 15px;
     z-index: 0;
   }
-
+  
   .services .box:hover {
-    transform: rotateY(15deg) scale(1.1);
+    transform: rotateY(10deg) scale(1.05);
     box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.4);
   }
-
-  /* Neon border effect */
+  
   .services .box:hover::before {
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
   }
-
-  /* Icon style */
+  
+  /* Icon */
   .services .box .icon {
     font-size: 45px;
     margin-bottom: 15px;
     color: #ffcc00;
+    z-index: 1;
+    position: relative;
     transition: transform 0.4s ease-in-out;
   }
-
+  
   .services .box:hover .icon {
     transform: scale(1.2);
     color: #ff9900;
   }
-
-  /* Title style */
+  
+  /* Title */
   .services .box .topic {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
     color: #ffdd57;
+    z-index: 1;
+    position: relative;
   }
-
-  /* Description */
+  
+  /* Paragraph */
   .services .box p {
     font-size: 14px;
-    margin-top: 10px;
     color: #e3e3e3;
+    z-index: 1;
+    position: relative;
   }
-
-
-  .contact .text {
-    width: 100%;
+  
+  /* Responsive Breakpoints */
+  @media (max-width: 1024px) {
+    .services .box {
+      width: calc(50% - 20px);
+    }
   }
-}
-
-@media (max-width: 500px) {
-  .home .text-two {
-    font-size: 55px;
+  
+  @media (max-width: 768px) {
+    .services .box {
+      width: 100%;
+      max-width: 90%;
+    }
+  
+    .services .boxes {
+      flex-direction: column;
+      align-items: center;
+    }
   }
-
-  .home .text-three {
-    font-size: 33px;
+  
+  @media (max-width: 500px) {
+    .home .text-two {
+      font-size: 45px;
+    }
+  
+    .home .text-three {
+      font-size: 28px;
+    }
+  
+    .skills-details .boxes .per {
+      font-size: 45px;
+    }
   }
-
-  .skills-details .boxes .per {
-    font-size: 50px;
-    color: #4070f4;
-  }
-}
-
+  
 /* projects */
 /* My Projects Section */
+/* ===== Base Styles ===== */
+body {
+  font-family: 'Ubuntu', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f7f9fc;
+}
+
+/* ===== Projects Section ===== */
 .projects {
   padding: 40px 20px;
   background-color: #f9f9f9;
@@ -1038,39 +1336,11 @@ footer .text span a:hover {
   color: #fff;
 }
 
-/* ============================
-   Responsive Breakpoints
-============================ */
-
-/* Tablets (768px - 1024px) */
-@media (max-width: 1024px) {
-  .projects .box {
-    flex: 1 1 calc(45% - 20px);
-  }
-}
-
-/* Phones (<768px) */
-@media (max-width: 767px) {
-  .projects .boxes {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .projects .box {
-    width: 90%;
-    flex: none;
-  }
-}
-
-
-
-/* Progress bar */
-/* Main Layout Container */
+/* ===== Skills Progress Bar ===== */
 .boxes {
   padding: 20px;
 }
 
-/* Flex layout for skill boxes */
 .skills-boxes {
   display: flex;
   flex-wrap: wrap;
@@ -1078,7 +1348,6 @@ footer .text span a:hover {
   gap: 20px;
 }
 
-/* Individual Skill Box */
 .box-progress {
   width: calc(50% - 10px);
   background: #fff;
@@ -1093,30 +1362,14 @@ footer .text span a:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
-/* Color Animation */
 @keyframes colorChange {
-  0% {
-    color: red;
-  }
-
-  25% {
-    color: orange;
-  }
-
-  50% {
-    color: yellowgreen;
-  }
-
-  75% {
-    color: skyblue;
-  }
-
-  100% {
-    color: purple;
-  }
+  0% { color: red; }
+  25% { color: orange; }
+  50% { color: yellowgreen; }
+  75% { color: skyblue; }
+  100% { color: purple; }
 }
 
-/* Skill Title & Percentage */
 .topics {
   font-size: 1.1rem;
   font-weight: 700;
@@ -1130,7 +1383,6 @@ footer .text span a:hover {
   animation: colorChange 4s infinite alternate-reverse;
 }
 
-/* Progress Bar Container */
 .progress-bar {
   width: 100%;
   height: 10px;
@@ -1139,7 +1391,6 @@ footer .text span a:hover {
   overflow: hidden;
 }
 
-/* Animated Progress Fill */
 .progress {
   height: 100%;
   background: linear-gradient(to right, #4CAF50, #2E7D32);
@@ -1147,40 +1398,7 @@ footer .text span a:hover {
   border-radius: 5px;
 }
 
-/* Responsive: Tablet */
-@media (max-width: 992px) {
-  .box-progress {
-    width: 100%;
-  }
-}
-
-/* Responsive: Mobile */
-@media (max-width: 600px) {
-  .skills-boxes {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .box-progress {
-    width: 100%;
-  }
-
-  .topics {
-    font-size: 1rem;
-  }
-}
-
-
-/* contact */
-/* Font & Reset */
-body {
-  font-family: 'Ubuntu', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f7f9fc;
-}
-
-/* Page Layout */
+/* ===== Contact Page ===== */
 .contact-page {
   padding: 60px 20px;
 }
@@ -1197,10 +1415,10 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-/* Left Side: Contact Info */
 .contact-info {
   flex: 1;
   min-width: 260px;
+  text-align: center;
 }
 
 .contact-info h2 {
@@ -1226,7 +1444,6 @@ body {
   color: #0e2431;
 }
 
-/* Right Side: Form */
 .contact-form-box {
   flex: 2;
   min-width: 300px;
@@ -1249,7 +1466,6 @@ body {
   border-radius: 2px;
 }
 
-/* Form Styling */
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -1291,50 +1507,49 @@ body {
   transform: scale(1.05);
 }
 
-/* Responsive */
+/* ===== Responsive Breakpoints ===== */
+@media (max-width: 1024px) {
+  .projects .box {
+    flex: 1 1 calc(45% - 20px);
+  }
+}
+
 @media (max-width: 768px) {
   .contact-container {
     flex-direction: column;
     padding: 30px 20px;
   }
-
   .form-button {
     text-align: center;
+  }
+  .skills-boxes {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .box-progress {
+    width: 100%;
+  }
+  .projects .box {
+    flex: 1 1 100%;
   }
 }
 
 @media (max-width: 480px) {
-
   .contact-form-box,
   .contact-info {
     width: 100%;
   }
-
   .form-button button {
     width: 100%;
   }
-}
-
-/* contact me */
-.contact {
-  background: #F0F8FF;
-}
-
-.contact .content {
-  margin: 0 auto;
-  padding: 30px 0;
-}
-
-.contact .text {
-  width: 80%;
-  text-align: center;
-  margin: auto;
-}
-
-.contact-info {
-  text-align: center;
-}
-
-.text .topic {
-  color: orangered;
+  .topics {
+    font-size: 1rem;
+  }
+  .projects .boxes {
+    flex-direction: column;
+    align-items: center;
+  }
+  .projects .box {
+    width: 90%;
+  }
 }
