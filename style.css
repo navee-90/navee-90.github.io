@@ -57,9 +57,11 @@ nav {
 }
 
 nav.sticky {
-  background: rgba(64, 112, 244, 0.95); /* semi-transparent */
+  background: rgba(64, 112, 244, 0.95);
+  /* semi-transparent */
   padding: 13px 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* subtle shadow */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  /* subtle shadow */
 }
 
 nav .navbar {
@@ -322,9 +324,17 @@ nav.sticky .menu-btn {
 
 /* Animations */
 @keyframes colorMix {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @keyframes slideIn {
@@ -332,6 +342,7 @@ nav.sticky .menu-btn {
     transform: translateX(-100%);
     opacity: 0;
   }
+
   100% {
     transform: translateX(0);
     opacity: 1;
@@ -421,7 +432,7 @@ nav.sticky .menu-btn {
 /* About Section Styling */
 /* Those Elements Where We Have Apply Same CSS,
  I'm Selecting Directly 'Section Tag' and 'Class'  */
- section {
+section {
   padding-top: 40px;
 }
 
@@ -1132,128 +1143,128 @@ footer .text span a:hover {
   }
 }
 
-  /* .services .boxes .box {
+/* .services .boxes .box {
     margin: 20px 0;
     width: 100%;
   } */
 
-  /* services boxes */
-  .services {
-    padding: 40px 20px;
-    background: #f0f8ff;
-  }
-  
-  .services .boxes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-  
+/* services boxes */
+.services {
+  padding: 40px 20px;
+  background: #f0f8ff;
+}
+
+.services .boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.services .box {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  width: 280px;
+  position: relative;
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+  transform-style: preserve-3d;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* Depth and Neon Glow */
+.services .box::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), transparent);
+  border-radius: 15px;
+  z-index: 0;
+}
+
+.services .box:hover {
+  transform: rotateY(10deg) scale(1.05);
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.services .box:hover::before {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Icon */
+.services .box .icon {
+  font-size: 45px;
+  margin-bottom: 15px;
+  color: #ffcc00;
+  z-index: 1;
+  position: relative;
+  transition: transform 0.4s ease-in-out;
+}
+
+.services .box:hover .icon {
+  transform: scale(1.2);
+  color: #ff9900;
+}
+
+/* Title */
+.services .box .topic {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #ffdd57;
+  z-index: 1;
+  position: relative;
+}
+
+/* Paragraph */
+.services .box p {
+  font-size: 14px;
+  color: #e3e3e3;
+  z-index: 1;
+  position: relative;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
   .services .box {
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    color: #fff;
-    padding: 25px;
-    border-radius: 15px;
-    text-align: center;
-    width: 280px;
-    position: relative;
-    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
-    transform-style: preserve-3d;
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    overflow: hidden;
+    width: calc(50% - 20px);
   }
-  
-  /* Depth and Neon Glow */
-  .services .box::before {
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: -10px;
+}
+
+@media (max-width: 768px) {
+  .services .box {
     width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), transparent);
-    border-radius: 15px;
-    z-index: 0;
+    max-width: 90%;
   }
-  
-  .services .box:hover {
-    transform: rotateY(10deg) scale(1.05);
-    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.4);
+
+  .services .boxes {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  .services .box:hover::before {
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-  }
-  
-  /* Icon */
-  .services .box .icon {
+}
+
+@media (max-width: 500px) {
+  .home .text-two {
     font-size: 45px;
-    margin-bottom: 15px;
-    color: #ffcc00;
-    z-index: 1;
-    position: relative;
-    transition: transform 0.4s ease-in-out;
   }
-  
-  .services .box:hover .icon {
-    transform: scale(1.2);
-    color: #ff9900;
+
+  .home .text-three {
+    font-size: 28px;
   }
-  
-  /* Title */
-  .services .box .topic {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #ffdd57;
-    z-index: 1;
-    position: relative;
+
+  .skills-details .boxes .per {
+    font-size: 45px;
   }
-  
-  /* Paragraph */
-  .services .box p {
-    font-size: 14px;
-    color: #e3e3e3;
-    z-index: 1;
-    position: relative;
-  }
-  
-  /* Responsive Breakpoints */
-  @media (max-width: 1024px) {
-    .services .box {
-      width: calc(50% - 20px);
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .services .box {
-      width: 100%;
-      max-width: 90%;
-    }
-  
-    .services .boxes {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-  
-  @media (max-width: 500px) {
-    .home .text-two {
-      font-size: 45px;
-    }
-  
-    .home .text-three {
-      font-size: 28px;
-    }
-  
-    .skills-details .boxes .per {
-      font-size: 45px;
-    }
-  }
-  
+}
+
 /* projects */
 /* My Projects Section */
 /* ===== Base Styles ===== */
@@ -1363,11 +1374,25 @@ body {
 }
 
 @keyframes colorChange {
-  0% { color: red; }
-  25% { color: orange; }
-  50% { color: yellowgreen; }
-  75% { color: skyblue; }
-  100% { color: purple; }
+  0% {
+    color: red;
+  }
+
+  25% {
+    color: orange;
+  }
+
+  50% {
+    color: yellowgreen;
+  }
+
+  75% {
+    color: skyblue;
+  }
+
+  100% {
+    color: purple;
+  }
 }
 
 .topics {
@@ -1519,36 +1544,45 @@ body {
     flex-direction: column;
     padding: 30px 20px;
   }
+
   .form-button {
     text-align: center;
   }
+
   .skills-boxes {
     flex-direction: column;
     gap: 15px;
   }
+
   .box-progress {
     width: 100%;
   }
+
   .projects .box {
     flex: 1 1 100%;
   }
 }
 
 @media (max-width: 480px) {
+
   .contact-form-box,
   .contact-info {
     width: 100%;
   }
+
   .form-button button {
     width: 100%;
   }
+
   .topics {
     font-size: 1rem;
   }
+
   .projects .boxes {
     flex-direction: column;
     align-items: center;
   }
+
   .projects .box {
     width: 90%;
   }
