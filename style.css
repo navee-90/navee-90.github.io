@@ -45,6 +45,7 @@
 
 /* navbar styling */
 /* Base Navbar Styles */
+/* Base Navbar Styling */
 nav {
   position: fixed;
   width: 100%;
@@ -56,8 +57,9 @@ nav {
 }
 
 nav.sticky {
-  background: #4070f4;
+  background: rgba(64, 112, 244, 0.95); /* semi-transparent */
   padding: 13px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* subtle shadow */
 }
 
 nav .navbar {
@@ -67,8 +69,10 @@ nav .navbar {
   justify-content: space-between;
   align-items: center;
   margin: auto;
+  padding: 0 20px;
 }
 
+/* Logo */
 nav .navbar .logo a {
   font-weight: 500;
   font-size: 35px;
@@ -84,6 +88,7 @@ nav.sticky .navbar .logo a {
 nav .navbar .menu {
   display: flex;
   position: relative;
+  transition: right 0.4s ease-in-out;
 }
 
 nav .navbar .menu li {
@@ -115,7 +120,7 @@ nav.sticky .menu a:hover {
 /* Social Icons */
 .navbar .media-icons a {
   color: #4070f4;
-  font-size: 18px;
+  font-size: 20px;
   margin: 0 6px;
   text-decoration: none;
 }
@@ -131,7 +136,7 @@ nav .menu-btn,
   color: #fff;
   right: 30px;
   top: 20px;
-  font-size: 24px;
+  font-size: 28px;
   cursor: pointer;
   display: none;
   z-index: 999;
@@ -148,14 +153,16 @@ nav.sticky .menu-btn {
 
 .navbar .menu .cancel-btn {
   color: #FFF;
-  right: 30px;
-  top: 20px;
 }
 
-/* Responsive Styles */
+/* Mobile Styles (max-width: 768px) */
 @media (max-width: 768px) {
   nav .menu-btn {
     display: block;
+  }
+
+  nav .navbar .logo a {
+    font-size: 26px;
   }
 
   nav .navbar .menu {
@@ -164,11 +171,11 @@ nav.sticky .menu-btn {
     right: -100%;
     background: #4070f4;
     height: 100vh;
-    width: 300px;
+    width: 260px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: right 0.4s ease;
+    padding: 20px;
   }
 
   nav .navbar .menu.active {
@@ -176,11 +183,11 @@ nav.sticky .menu-btn {
   }
 
   nav .navbar .menu li {
-    margin: 20px 0;
+    margin: 24px 0;
   }
 
   nav .navbar .menu a {
-    font-size: 22px;
+    font-size: 20px;
     color: #FFF;
   }
 
@@ -192,6 +199,50 @@ nav.sticky .menu-btn {
     display: block;
   }
 }
+
+/* Tablet Styles (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  nav {
+    padding: 16px 0;
+  }
+
+  nav .navbar .logo a {
+    font-size: 30px;
+  }
+
+  nav .navbar .menu a {
+    font-size: 17px;
+  }
+
+  nav .navbar .menu li {
+    margin: 0 10px;
+  }
+
+  .navbar .media-icons a {
+    font-size: 18px;
+    margin: 0 4px;
+  }
+}
+
+/* Desktop/Laptop Styles (1025px and up) */
+@media (min-width: 1025px) {
+  nav {
+    padding: 20px 0;
+  }
+
+  nav .navbar .logo a {
+    font-size: 35px;
+  }
+
+  nav .navbar .menu a {
+    font-size: 18px;
+  }
+
+  .navbar .media-icons a {
+    font-size: 20px;
+  }
+}
+
 
 
 /* Home section styling */
